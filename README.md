@@ -1,12 +1,12 @@
 # HighLowEvenOddGame
 High Low Even Odd Game. In Competency Exercises, you demonstrate your skill and ability to use the programming principles you've learned in the current and previous modules. You must complete this assignment by yourself, much like a module exam. You can ask instructors for clarification about the project -- you can not ask instructors or other students for help with logic or coding. If you are struggling with the project, you can look at previous assignments where you did similar work, and you can review the pertinent sections in the book.  These are the skills you practiced in this module and will now demonstrate: 
 
-Selection     
-Loops (FOR, While, Do While)     
-Looping to acquire valid input     
-Random numbers     
-Booleans     
-Logical operators OR and AND  
+-Selection     
+-Loops (FOR, While, Do While)     
+-Looping to acquire valid input     
+-Random numbers     
+-Booleans     
+-Logical operators OR and AND  
 
 Module 2 Competency Exercise: High Low / Even Odd Game  
 
