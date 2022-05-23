@@ -6,39 +6,39 @@ public class HighLowEvenOddGame {
 
     public static void main(String[] args) {
         Scanner computerKeyboardInput = new Scanner(System.in);
-        String highLow, evenOdd = "", repeat = "";
+        String highLow, evenOdd, repeat = "";
         int die1, die2, total;
-        boolean validInput = false;
+        boolean appropriateLetters = false;
         System.out.println("High-Low Even-Odd Game by Kevin Bell \n");
         while (!repeat.equalsIgnoreCase("n")) {
             do {
                 System.out.print("Will the next total be High (h) or Low (l)? ");
-                highLow = computerKeyboardInput.next();
+                highLow = computerKeyboardInput.nextLine();
                 if (highLow.equalsIgnoreCase("h") || highLow.equalsIgnoreCase("l")) {
-                    validInput = true;
+                    appropriateLetters = true;
                 }
-            } while (!validInput);
-            validInput = false;
+            } while (!appropriateLetters);
+            appropriateLetters = false;
             do {
                 System.out.print("Will the next total be Even (e) or Odd (o)? ");
-                evenOdd = computerKeyboardInput.next();
+                evenOdd = computerKeyboardInput.nextLine();
                 if (evenOdd.equalsIgnoreCase("e") || evenOdd.equalsIgnoreCase("o")) {
-                    validInput = true;
+                    appropriateLetters = true;
                 }
-            } while (!validInput);
-            validInput = false;
+            } while (!appropriateLetters);
+            appropriateLetters = false;
             die1 = rollDie();
             die2 = rollDie();
             total = die1 + die2;
             results(total, evenOdd, highLow);
             do {
                 System.out.print("Do you want to play again? (y/n) ");
-                repeat = computerKeyboardInput.next();
+                repeat = computerKeyboardInput.nextLine();
                 if (repeat.equalsIgnoreCase("n") || repeat.equalsIgnoreCase("y")) {
-                    validInput = true;
+                    appropriateLetters = true;
                 }
-            } while (!validInput);
-            validInput = false;
+            } while (!appropriateLetters);
+            appropriateLetters = false;
         }
     }
 
@@ -47,31 +47,31 @@ public class HighLowEvenOddGame {
     }
 
     public static boolean rangeTest(int diceTotal, String highLow) {
-        boolean correctGuess;
+        boolean correct;
         if (diceTotal > 7 && highLow.equalsIgnoreCase("h")) {
-            correctGuess = true;
+            correct = true;
         } else if (diceTotal < 7 && highLow.equalsIgnoreCase(("h"))) {
-            correctGuess = false;
+            correct = false;
         } else if (diceTotal > 7 && highLow.equalsIgnoreCase("l")) {
-            correctGuess = false;
+            correct = false;
         } else {
-            correctGuess = true;
+            correct = true;
         }
-        return correctGuess;
+        return correct;
     }
 
     public static boolean evenOddTest(int diceTotal, String evenOdd) {
-        boolean correctGuess;
+        boolean correct;
         if (diceTotal % 2 == 1 && evenOdd.equalsIgnoreCase("o")) {
-            correctGuess = true;
+            correct = true;
         } else if (diceTotal % 2 == 1 && evenOdd.equalsIgnoreCase("e")) {
-            correctGuess = false;
+            correct = false;
         } else if (diceTotal % 2 == 0 && evenOdd.equalsIgnoreCase("e")) {
-            correctGuess = true;
+            correct = true;
         } else {
-            correctGuess = false;
+            correct = false;
         }
-        return correctGuess;
+        return correct;
     }
 
     public static void results(int diceTotal, String evenOdd, String highLow) {
