@@ -6,11 +6,11 @@ public class HighLowEvenOddGame {
 
     public static void main(String[] args) {
         Scanner computerKeyboardInput = new Scanner(System.in);
-        String highLow, evenOdd = "z", playAgain = "y";
-        int die1, die2, diceTotal;
+        String highLow, evenOdd = "", repeat = "";
+        int die1, die2, total;
         boolean validInput = false;
         System.out.println("High-Low Even-Odd Game by Kevin Bell \n");
-        while (!playAgain.equalsIgnoreCase("n")) {
+        while (!repeat.equalsIgnoreCase("n")) {
             do {
                 System.out.print("Will the next total be High (h) or Low (l)? ");
                 highLow = computerKeyboardInput.next();
@@ -29,12 +29,12 @@ public class HighLowEvenOddGame {
             validInput = false;
             die1 = rollDie();
             die2 = rollDie();
-            diceTotal = die1 + die2;
-            results(diceTotal, evenOdd, highLow);
+            total = die1 + die2;
+            results(total, evenOdd, highLow);
             do {
                 System.out.print("Do you want to play again? (y/n) ");
-                playAgain = computerKeyboardInput.next();
-                if (playAgain.equalsIgnoreCase("n") || playAgain.equalsIgnoreCase("y")) {
+                repeat = computerKeyboardInput.next();
+                if (repeat.equalsIgnoreCase("n") || repeat.equalsIgnoreCase("y")) {
                     validInput = true;
                 }
             } while (!validInput);
